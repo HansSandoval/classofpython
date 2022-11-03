@@ -5,9 +5,13 @@ class Fraction:
     ##fin seccion atributos##
 
 
-    def __init__(self,numerator,denominator):
+    def __init__(self,numerator,"/",denominator):
         self.numerator=numerator
         self.denominator=denominator
+        
+    def multiplication(self,b):
+        self.numerator*b.numerator
+        self.denominator*b.denominator
 
 ##numerator=numero random
 ##denominator=numero random
