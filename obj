@@ -12,6 +12,8 @@ class Fraction:
     def multiplication(self,b):
         self.numerator*b.numerator
         self.denominator*b.denominator
+        r=fraction(numerator,denominator)
+        r.print
 
 ##numerator=numero random
 ##denominator=numero random
