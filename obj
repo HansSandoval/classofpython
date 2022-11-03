@@ -1,0 +1,15 @@
+class Fraction:
+    ##atributos##
+    numerator=0
+    denominator=1
+    ##fin seccion atributos##
+
+
+    def __init__(self,numerator,denominator):
+        self.numerator=numerator
+        self.denominator=denominator
+
+##numerator=numero random
+##denominator=numero random
+
+o=fraction 
