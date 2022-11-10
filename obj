@@ -1,21 +1,84 @@
 class Fraction:
     ##atributos##
-    numerator=0
     denominator=1
-    ##fin seccion atributos##
+    numerator=0
+    ##constructor##
+    def __init__(self,numerator,denominator):                    
+        self.numerator = numerator
+        self.denominator = denominator
 
+    ##metodos##
 
-    def __init__(self,numerator,"/",denominator):
-        self.numerator=numerator
-        self.denominator=denominator
+    ##resolucion de multiplicacion##
+    def multiplication(self,other):
+        numerator= self.numerator * other.numerator
+        denominator= self.denominator * other.denominator
+        print("El resultado de la multiplicacion es:",numerator,"/",denominator)
         
-    def multiplication(self,b):
-        self.numerator*b.numerator
-        self.denominator*b.denominator
-        r=fraction(numerator,denominator)
-        r.print
+    ##resolucion de division##
+    def division(self,other):
+        numerator= self.numerator * other.denominator
+        denominator= self.denominator * other.numerator
+        print("El resultado de la division es:",numerator,"/",denominator)
+        
+    ##resolucion de suma##    
+    def addition(self,other):
+        if(self.denominator!=other.denominator):
+            denominator = self.denominator * other.denominator
+            numerator = (self.numerator*other.denominator)+(other.numerator*self.denominator)
+            print("\nEl resultado de la suma:",numerator,"/",denominator)
+        else:
+            numerator = self.numerator + other.numerator
+            print("\nEl resultado de la suma:",numerator,"/",self.denominator)
+            
+    ##resolucion de resta##
+    def subtraction(self,other):
+        if(self.denominator != other.denominator):
+            denominator = self.denominator * other.denominator
+            numerator = (self.numerator*other.denominator)-(other.numerator*self.denominator)
+            print("\nEl resultado de la resta:",numerator,"/",denominator)
+        else:
+            numerator = self.numerator - other.numerator
+            print("\nEl resultado de la resta:",numerator,"/",self.denominator)
 
-##numerator=numero random
-##denominator=numero random
 
-o=fraction 
+##Iniciar variables##
+numerator_1 = 0
+numerator_2 = 0
+denominator_1 = 0
+denominator_2 = 0
+fraction_1 = 0
+fraction_2 = 0
+opcion = 0
+
+##Entrada de datos##
+numerator_1 = int(input("Numerador fraccion A: "))
+denominator_1 = int(input("Denomiandor fraccion A: "))
+numerator_2 = int(input("Numerador fraccion B: "))
+denominator_2 = int(input("Denominador fraccion B: "))
+
+##asignar variables##
+fraction_1 = Fraction(numerator_1, denominator_1)
+print("Fraccion A =",fraction_1.numerator,"/",fraction_1.denominator)
+fraction_2 = Fraction(numerator_2, denominator_2)
+print("Fraccion B =",fraction_2.numerator,"/",fraction_2.denominator)
+
+##creacion de el menu##
+print("\n→→→→→→→→→→→→→ELIJA LA OPERACION A UTILIZAR←←←←←←←←←←←←← \n")
+print("restar(-)")
+print("sumar(+)")
+print("multiplicar(*)")
+print("dividir(/)\n")
+opcion = input("Ingrese la operacion a realizar (+ - * /):")
+
+if(opcion =='+'):
+  fraction_1.addition(fraction_2)
+elif(opcion =='-'):
+  fraction_1.substraccion(fraction_2)
+elif(opcion =='*'):
+  fraction_1.multiplication(fraction_2)
+elif(opcion =='/'):
+  fraction_1.division(fraction_2)
+else:
+  print("ingrese un simbolo adecuado")
+return 0:
